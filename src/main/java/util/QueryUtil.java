@@ -23,7 +23,7 @@ public class QueryUtil {
     public ResultSet selectWithStringsParameters(Connection conn, String query, String... args) {
         ResultSet resultSet = null;
         try {
-            PreparedStatement statement = conn.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            PreparedStatement statement = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             for(int i=0; i<args.length; ++i) {
                 statement.setString(i+1, args[i]);
             }

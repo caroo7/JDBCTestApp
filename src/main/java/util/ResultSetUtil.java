@@ -11,6 +11,7 @@ public class ResultSetUtil {
             throw new SQLException("No updatable result set"); // proper exception when result set is not updatable
         }
 
+        resultSet.next();
         resultSet.updateString("name", parameters[0]);
         resultSet.updateString("surname", parameters[1]);
         resultSet.updateRow();

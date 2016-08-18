@@ -41,9 +41,8 @@ public class Main {
             //delete row
             //queryUtil.executeQuery(conn, ScriptsUtil.deleteRow("Maciek"));
 
-            ResultSet personSet = queryUtil.selectWithStringsParameters(conn, ScriptsUtil.selectRow(), "MICHAL", "SKUPIEN");
-            ResultSet updatedPersonSet = ResultSetUtil.updateResultSet(personSet, "Karol", "Skupien");
-            displayResults(updatedPersonSet);
+            ResultSet personSet = queryUtil.selectWithStringsParameters(conn, ScriptsUtil.selectRow(), "maciej", "janik");
+            //ResultSet updatedPersonSet = ResultSetUtil.updateResultSet(personSet, "andrzej", "tralalala");
 
         } catch (ConnectionEstablishException | SQLException e) {
             e.printStackTrace();
